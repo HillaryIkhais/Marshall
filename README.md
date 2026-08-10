@@ -10,7 +10,7 @@
 
 ---
 
-## 📖 The Story Behind MARSHALL
+## The Story Behind MARSHALL
 
 Every year across the United States, health insurance companies deny over **850 million medical claims**—a 20.4% initial rejection rate.
 
@@ -20,15 +20,10 @@ So why do less than 1% of patients ever appeal? Because hiring a healthcare lawy
 
 When Michael Vance’s $14,200 knee surgery was unfairly denied as "not medically necessary," he didn't have $5,000 for a lawyer retainer. We built MARSHALL so no patient has to fight insurance companies alone.
 
----
-
-## ⚡ The 5-Second Pitch
-
-MARSHALL turns a patient's voice story and denied claim into a binding, citation-heavy legal demand letter backed by live-scraped state insurance laws—in **under 2 minutes for $0**.
 
 ---
 
-## 🎬 Product Demo & 3-Step Workflow
+## Product Demo & 3-Step Workflow
 
 ```
 [1. Speechmatics Voice Intake] ───> [2. Bright Data Live Law Search] ───> [3. AI Legal Synthesis]
@@ -48,28 +43,27 @@ Synthesizes an official, paper-textured Parchment Demand Letter complete with st
 
 ---
 
-## 📊 Impact Metrics at a Glance
+## Impact Metrics at a Glance
 
 | Metric | Without MARSHALL | With MARSHALL |
 | :--- | :--- | :--- |
-| **Legal Representation Cost** | $500 / Hour | **$0 (Free)** |
 | **Appeal Preparation Time** | 2 to 4 Weeks | **1.4 Minutes** |
 | **Statutory Citation Accuracy** | Manual lookup (Error-prone) | **94% Verified via Bright Data** |
 | **Claim Demand Recovery** | $14,200 Principal | **$15,620 (Includes 10% Penalty Interest)** |
 
 ---
 
-## 🛠️ Technology Stack & Partner Integrations
+## Technology Stack & Partner Integrations
 
 - **Speechmatics Engine**: Real-time patient voice intake & medical transcription.
 - **Bright Data MCP Scraper**: Live web scraping of California Insurance & Health Safety codes (`brightdata-scrape` Edge Function).
 - **AI/ML API**: Statutory matrix generation & legal demand letter synthesis.
-- **Frontend**: React 18, TypeScript, Tailwind CSS v4, Lucide Icons, Vite.
+- **Frontend**: Built with natively.ai builder: React 18, TypeScript, Tailwind CSS v4, Lucide Icons, Vite.
 - **Backend**: Supabase (`uesyokxtzhkeqmdusawa`).
 
 ---
 
-## 🚀 Quick Start & Local Setup
+## Quick Start & Local Setup
 
 ```bash
 # 1. Clone repository
