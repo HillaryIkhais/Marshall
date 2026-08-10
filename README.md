@@ -34,9 +34,7 @@ When Michael Vance’s $14,200 knee surgery was unfairly denied as "not medicall
 Instead of filling out 20 pages of paperwork, the patient taps one button and dictates their story. Speechmatics transcribes medical history, provider notes, and prior authorization numbers in real-time with 98% accuracy.
 
 ### Step 2: Live Insurance Law Scrape & Penalty Interest (Bright Data)
-MARSHALL invokes Bright Data to live-scrape state statutes (e.g. Cal. Ins. Code § 2695.7), detecting if the insurer violated prompt settlement mandates. It automatically calculates 10% statutory penalty interest:
-
-$$\text{\$14,200 Principal} + \text{\$1,420 Statutory Interest (10\%)} = \mathbf{\$15,620\text{ Total Demand}}$$
+MARSHALL invokes Bright Data to live-scrape state statutes (e.g. Cal. Ins. Code § 2695.7), detecting if the insurer violated prompt settlement mandates. It automatically calculates 10% statutory penalty interest.
 
 ### Step 3: Legal Demand Synthesis (AI/ML API)
 Synthesizes an official, paper-textured Parchment Demand Letter complete with statutory violation matrices, legal seal, and 1-click export to the State Insurance Commissioner.
