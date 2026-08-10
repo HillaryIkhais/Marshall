@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lato", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: "EB Garamond", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* ── Warm, Human-First Palette ── */
+  --color-bg-primary: #FDFBF7;
+  --color-bg-secondary: #F5F0E6;
+  --color-bg-card: #FFFFFF;
+  --color-bg-card-alt: #F9F6EF;
+  --color-bg-paper: #FEFCF8;
+
+  --color-primary: #14532D;
+  --color-primary-light: #166534;
+  --color-on-primary: #FFFFFF;
+
+  --color-accent: #D97706;
+  --color-accent-light: #E89B1A;
+  --color-accent-glow: #F5A623;
+
+  --color-foreground: #0F172A;
+  --color-foreground-muted: #475569;
+  --color-foreground-dark: #0F172A;
+
+  --color-accent-amber: #D97706;
+  --color-badge-terracotta: #BE123C;
+
+  --color-border: #E2E8F0;
+  --color-border-light: #D1D5DB;
+
+  --color-destructive: #BE123C;
+  --color-destructive-light: #FDA4AF;
+  --color-success: #14532D;
+  --color-ring: #14532D;
+
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(20, 83, 45, 0.15);
+  --shadow-paper: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* ── Custom Animations ── */
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(217, 119, 6, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.6));
+  }
+}
+
+@keyframes audio-waveform {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.5);
+  }
+  75% {
+    transform: scaleY(0.9);
+  }
+}
+
+@keyframes status-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(20, 83, 45, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(20, 83, 45, 0);
+  }
+}
+
+@keyframes typing-cursor {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #D97706;
+  }
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes soft-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(20, 83, 45, 0.3);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 12px rgba(20, 83, 45, 0);
+  }
+}
+
+@keyframes paper-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 400ms ease-out forwards;
+}
+
+.animate-typing-cursor {
+  border-right: 2px solid #D97706;
+  animation: typing-cursor 1s step-end infinite;
+}
+
+.animate-soft-breathe {
+  animation: soft-breathe 2.2s ease-in-out infinite;
+}
+
+.animate-paper-fade-in {
+  animation: paper-fade-in 500ms ease-out forwards;
+}
+
+/* ── Before vs After Comparison ── */
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) rotate(-12deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.95) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-stamp-in {
+  animation: stamp-in 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 800ms ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 500ms ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 200ms; }
+.stagger-3 { animation-delay: 300ms; }
+.stagger-4 { animation-delay: 400ms; }
+
+/* ── Stat Penalty Highlight ── */
+@keyframes highlight-reveal {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+.highlight-reveal {
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.15) 0%, rgba(217, 119, 6, 0) 100%);
+  background-size: 200% 100%;
+  animation: highlight-reveal 1s ease-out forwards;
+}
+
+/* ── Scrollbar Styling ── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F5F0E6;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* ── Audio Waveform Bars ── */
+.waveform-bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background: #166534;
+  border-radius: 2px;
+  margin: 0 1px;
+  transform-origin: center;
+}
+
+.waveform-bar.active {
+  background: #D97706;
+}
+
+/* ── Paper Texture for Appeal Document ── */
+.paper-texture {
+  background-color: #FEFCF8;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(0, 0, 0, 0.02) 28px,
+      rgba(0, 0, 0, 0.02) 29px
+    );
+}
+
+.paper-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ── Focus Styles ── */
+*:focus-visible {
+  outline: 2px solid #14532D;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
