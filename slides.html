@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MARSHALL — Hackathon Pitch Deck</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+
+  @page {
+    size: 11in 6.1875in;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #070A14;
+    color: #F8FAFC;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .slide {
+    width: 11in;
+    height: 6.1875in;
+    page-break-after: always;
+    padding: 0.45in 0.55in;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #070A14;
+    border: 1px solid #1E293B;
+    overflow: hidden;
+  }
+
+  .glow-green {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background: rgba(0, 245, 160, 0.14);
+    filter: blur(70px);
+    border-radius: 50%;
+  }
+
+  .glow-amber {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 350px;
+    height: 350px;
+    background: rgba(245, 158, 11, 0.14);
+    filter: blur(70px);
+    border-radius: 50%;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 0.12in;
+    position: relative;
+    z-index: 10;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.1in;
+  }
+
+  .logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 22pt;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+  }
+
+  .slide-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #00F5A0;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background: rgba(0, 245, 160, 0.1);
+    border: 1px solid rgba(0, 245, 160, 0.3);
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  .title-group {
+    margin-top: 0.12in;
+    position: relative;
+    z-index: 10;
+  }
+
+  .slide-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 27pt;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.1;
+  }
+
+  .slide-sub {
+    font-size: 10.5pt;
+    color: #94A3B8;
+    margin-top: 0.04in;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2in;
+    margin-top: 0.18in;
+    flex: 1;
+    position: relative;
+    z-index: 10;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.15in;
+    margin-top: 0.18in;
+    flex: 1;
+    position: relative;
+    z-index: 10;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.22in;
+    margin-top: 0.18in;
+    flex: 1;
+    position: relative;
+    z-index: 10;
+  }
+
+  .card {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 0.2in;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  }
+
+  .card.red { border-top: 3px solid #F43F5E; }
+  .card.amber { border-top: 3px solid #F59E0B; }
+  .card.green { border-top: 3px solid #00F5A0; }
+
+  .stat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 32pt;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .stat.red { color: #F43F5E; }
+  .stat.amber { color: #F59E0B; }
+  .stat.green { color: #00F5A0; }
+
+  .card-head {
+    font-family: 'EB Garamond', serif;
+    font-size: 15pt;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 0.06in;
+  }
+
+  .card-body {
+    font-size: 9pt;
+    color: #CBD5E1;
+    line-height: 1.4;
+    margin-top: 0.05in;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 0.08in;
+    font-size: 8pt;
+    color: #64748B;
+    font-family: 'JetBrains Mono', monospace;
+    position: relative;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide">
+    <div class="glow-green"></div>
+    <div class="glow-amber"></div>
+
+    <div class="header">
+      <div class="brand">
+        <div class="logo">MARSHALL</div>
+      </div>
+      <div class="slide-tag">AI FACTORY HACKATHON ENTRY</div>
+    </div>
+
+    <div style="margin: auto 0; text-align: center; position: relative; z-index: 10;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; color: #F59E0B; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">
+        ELEVATOR PITCH
+      </span>
+      <h1 style="font-family: 'EB Garamond', serif; font-size: 32pt; font-weight: 800; color: #FFFFFF; line-height: 1.15; margin-top: 0.1in; margin-bottom: 0.15in;">
+        "An autonomous legal advocacy engine that converts patient voice stories and live state laws into formal insurance appeal demands."
+      </h1>
+      <p style="font-size: 12pt; color: #94A3B8; max-width: 800px; margin: 0 auto; line-height: 1.5;">
+        Synthesizing patient voice intake, live state insurance code scraping, and statutory interest penalty enforcement into binding 90-second legal appeals.
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>MARSHALL — AI Health Advocacy Engine</span>
+      <span>Repo: github.com/HillaryIkhais/Marshall</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: THE PROBLEM -->
+  <div class="slide">
+    <div class="glow-amber"></div>
+
+    <div class="header">
+      <div class="brand">
+        <div class="logo">MARSHALL</div>
+      </div>
+      <div class="slide-tag">01 / THE PROBLEM</div>
+    </div>
+
+    <div class="title-group">
+      <div class="slide-title">The 850 Million Claim Denial Wall</div>
+      <div class="slide-sub">Systemic claim rejections rely on administrative friction and expensive legal costs to force patient dropout.</div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card red">
+        <div>
+          <div class="stat red">850M+</div>
+          <div class="card-head">Annual Denials</div>
+        </div>
+        <div class="card-body">Over 850 million medical claims are rejected annually across U.S. commercial and ACA marketplace health plans.</div>
+      </div>
+
+      <div class="card red">
+        <div>
+          <div class="stat red">$500 / hr</div>
+          <div class="card-head">Legal Fee Barrier</div>
+        </div>
+        <div class="card-body">Hiring a healthcare attorney costs $500/hr, making legal representation financially impossible for regular families.</div>
+      </div>
+
+      <div class="card red">
+        <div>
+          <div class="stat red">&lt; 1%</div>
+          <div class="card-head">Patient Appeal Rate</div>
+        </div>
+        <div class="card-body">99% of policyholders give up on valid claims due to confusing 30-page administrative rejection notices.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Problem Statement: Administrative Friction & Legal Access Inequality</span>
+      <span>Slide 2 of 5</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: SOLUTION & WORKFLOW -->
+  <div class="slide">
+    <div class="glow-green"></div>
+
+    <div class="header">
+      <div class="brand">
+        <div class="logo">MARSHALL</div>
+      </div>
+      <div class="slide-tag">02 / SOLUTION ARCHITECTURE</div>
+    </div>
+
+    <div class="title-group">
+      <div class="slide-title">Autonomous 3-Stage Legal Engine</div>
+      <div class="slide-sub">Converting unstructured patient voice stories into binding legal demand letters.</div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card green">
+        <div>
+          <div class="card-head" style="color: #00F5A0;">1. Speechmatics Voice Engine</div>
+          <div class="card-body">
+            Transcribes unstructured patient voice history, provider notes, and prior authorization numbers in real-time with 98% accuracy.
+          </div>
+        </div>
+        <div style="font-size: 8pt; font-weight: 700; color: #00F5A0; font-family: 'JetBrains Mono';">Voice Intake Layer</div>
+      </div>
+
+      <div class="card amber">
+        <div>
+          <div class="card-head" style="color: #F59E0B;">2. Bright Data Law Scraper</div>
+          <div class="card-body">
+            Live-scrapes Cal. Ins. Code § 2695.7 in 142ms to detect 40-day response violations and trigger 10% statutory penalty interest ($14,200 → $15,620).
+          </div>
+        </div>
+        <div style="font-size: 8pt; font-weight: 700; color: #F59E0B; font-family: 'JetBrains Mono';">Statute Intelligence Layer</div>
+      </div>
+
+      <div class="card green">
+        <div>
+          <div class="card-head" style="color: #00F5A0;">3. AI/ML API Legal Synth</div>
+          <div class="card-body">
+            Synthesizes formal Parchment Legal Demand Letters containing statutory violation matrices for 1-click Insurance Commissioner filing.
+          </div>
+        </div>
+        <div style="font-size: 8pt; font-weight: 700; color: #00F5A0; font-family: 'JetBrains Mono';">Legal Document Layer</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Tech Architecture: Speechmatics • Bright Data MCP • AI/ML API • Supabase</span>
+      <span>Slide 3 of 5</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: BUSINESS MODEL -->
+  <div class="slide">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">MARSHALL</div>
+      </div>
+      <div class="slide-tag">03 / BUSINESS MODEL</div>
+    </div>
+
+    <div class="title-group">
+      <div class="slide-title">3-Tier High-Margin Revenue Architecture</div>
+      <div class="slide-sub">Monetization aligned directly with successful claim payout recovery.</div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card green">
+        <div>
+          <div class="stat green">10%–15%</div>
+          <div class="card-head">Contingency Success Fee</div>
+        </div>
+        <div class="card-body">
+          $0 upfront cost for patients. MARSHALL earns a 10%–15% success fee ONLY upon successful claim recovery ($1,562 fee on $15.6k recovery).
+        </div>
+      </div>
+
+      <div class="card green">
+        <div>
+          <div class="stat green">$2,500/mo</div>
+          <div class="card-head">Hospital Enterprise SaaS</div>
+        </div>
+        <div class="card-body">
+          SaaS subscription for hospital billing departments & surgical centers to automate their entire denial recovery workflow.
+        </div>
+      </div>
+
+      <div class="card amber">
+        <div>
+          <div class="stat amber">100%</div>
+          <div class="card-head">Penalty Interest Capture</div>
+        </div>
+        <div class="card-body">
+          Under Cal. Ins. Code § 10111.2, delayed payouts incur 10% statutory interest ($1,420). MARSHALL retains penalty interest as platform revenue.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Monetization Strategy: Contingency Fee + Enterprise B2B SaaS + Statutory Interest Capture</span>
+      <span>Slide 4 of 5</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: REPOSITORY & SUMMARY -->
+  <div class="slide">
+    <div class="glow-green"></div>
+
+    <div class="header">
+      <div class="brand">
+        <div class="logo">MARSHALL</div>
+      </div>
+      <div class="slide-tag">04 / REPOSITORY</div>
+    </div>
+
+    <div style="margin: auto 0; text-align: center; position: relative; z-index: 10;">
+      <div class="slide-title" style="font-size: 25pt; max-width: 850px; margin: 0 auto; color: #00F5A0;">
+        "An autonomous legal advocacy engine that converts patient voice stories and live state laws into formal insurance appeal demands."
+      </div>
+      <div style="margin-top: 0.25in; font-size: 11pt; color: #94A3B8; font-family: 'JetBrains Mono';">
+        GitHub Repository: <span style="color: #FFFFFF; font-weight: 700;">https://github.com/HillaryIkhais/Marshall</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>MARSHALL — Open Source Software under Apache 2.0 License</span>
+      <span>Slide 5 of 5</span>
+    </div>
+  </div>
+
+</body>
+</html>

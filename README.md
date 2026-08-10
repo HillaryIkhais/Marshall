@@ -14,7 +14,7 @@
 
 Every year across the United States, health insurance companies deny over **850 million medical claims**—a 20.4% initial rejection rate.
 
-Here is the industry's dirty secret: **over 50% of appealed claims are eventually overturned and paid.**
+Here is the industry's secret: **over 50% of appealed claims are eventually overturned and paid.**
 
 So why do less than 1% of patients ever appeal? Because hiring a healthcare lawyer costs **$500 an hour**. Insurers send 30-page rejection notices filled with cold legal jargon, counting on regular people feeling overwhelmed and giving up.
 
@@ -34,7 +34,7 @@ When Michael Vance’s $14,200 knee surgery was unfairly denied as "not medicall
 Instead of filling out 20 pages of paperwork, the patient taps one button and dictates their story. Speechmatics transcribes medical history, provider notes, and prior authorization numbers in real-time with 98% accuracy.
 
 ### Step 2: Live Insurance Law Scrape & Penalty Interest (Bright Data)
-MARSHALL invokes Bright Data to live-scrape state statutes (e.g. Cal. Ins. Code § 2695.7), detecting if the insurer violated prompt settlement mandates. It automatically calculates 10% statutory penalty interest.
+MARSHALL invokes Bright Data to live-scrape state statutes (e.g. Cal. Ins. Code 2695.7), detecting if the insurer violated prompt settlement mandates. It automatically calculates 10% statutory penalty interest.
 
 ### Step 3: Legal Demand Synthesis (AI/ML API)
 Synthesizes an official, paper-textured Parchment Demand Letter complete with statutory violation matrices, legal seal, and 1-click export to the State Insurance Commissioner.
@@ -75,7 +75,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5174](http://localhost:5174) in your browser.
+Open localhost in your browser.
 
 ---
 
