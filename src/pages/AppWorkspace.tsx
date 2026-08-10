@@ -108,10 +108,18 @@ export default function AppWorkspace() {
         setStep1Complete(true);
         if (highestStep < 2) {
           setHighestStep(2);
-          setTimeout(() => setActiveStep(2), 600);
         }
       }
     }, 55);
+
+    // Speak Michael's Voice Out Loud via Browser Audio
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(SAMPLE_TRANSCRIPT);
+      utterance.rate = 0.95;
+      utterance.pitch = 0.9;
+      window.speechSynthesis.speak(utterance);
+    }
 
     return () => clearInterval(interval);
   }, [isSimulating, highestStep]);
@@ -134,7 +142,6 @@ export default function AppWorkspace() {
     setStep2Complete(true);
     if (highestStep < 3) {
       setHighestStep(3);
-      setTimeout(() => setActiveStep(3), 600);
     }
   }, [highestStep]);
 
