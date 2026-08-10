@@ -303,9 +303,8 @@ export default function AppWorkspace() {
                     className="waveform-bar"
                     style={{
                       animation: isRecording
-                        ? `audio-waveform ${0.4 + delay}s ease-in-out infinite`
+                        ? `audio-waveform ${0.4 + delay}s ease-in-out ${delay}s infinite`
                         : "none",
-                      animationDelay: `${delay}s`,
                       height: isRecording ? `${12 + Math.random() * 28}px` : "6px",
                       opacity: isRecording ? 1 : 0.25,
                       transition: "height 150ms ease-out, opacity 150ms ease-out",
